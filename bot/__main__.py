@@ -19,8 +19,8 @@ from .modules import authorize, list, cancel_mirror, mirror_status, mirror, clon
 def stats(update, context):
     currentTime = get_readable_time((time.time() - botStartTime))
     total, used, free = shutil.disk_usage('.')
-    total = get_readable_file_size(total)+100
-    used = get_readable_file_size(used)+100
+    total = get_readable_file_size(total)-50
+    used = get_readable_file_size(used)-50
     free = get_readable_file_size(free)
     free= total-used
     stats = f'Bot Uptime: {currentTime}\n' \
